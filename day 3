@@ -1,0 +1,18 @@
+Single Number
+
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+  solution:
+  #include <vector>
+using namespace std;
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int unique = 0;
+        for (int num : nums) {
+            unique ^= num;
+        }
+        return unique;
+    }
+};
