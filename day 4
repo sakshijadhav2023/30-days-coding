@@ -1,0 +1,38 @@
+Q Valid Anagram
+
+Companies
+Given two strings s and t, return true if t is an 
+anagram
+ of s, and false otherwise
+
+
+solution:
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+bool isAnagram(string s, string t) {
+    // Check if lengths are different
+    if (s.size() != t.size()) {
+        return false;
+    }
+    // Sort both strings
+    sort(s.begin(), s.end());
+    sort(t.begin(), t.end());
+    // Compare sorted strings
+    return s == t;
+}
+
+int main() {
+    // Example 1
+    string s1 = "anagram", t1 = "nagaram";
+    cout << (isAnagram(s1, t1) ? "true" : "false") << endl;  // Output: true
+
+    // Example 2
+    string s2 = "rat", t2 = "car";
+    cout << (isAnagram(s2, t2) ? "true" : "false") << endl;  // Output: false
+
+    return 0;
+}
